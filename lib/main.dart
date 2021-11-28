@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const MyHomePage(title: 'FlutterLab.HomePage !'),
         // DartLabPage ページの class を指定。
         '/dart-lab-page': (context) => const DartLabPage(),
+        '/entrance-page': (context) => const EntrancePage(),
       },
     );
   }
@@ -53,6 +54,23 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class EntrancePage extends StatelessWidget {
+  const EntrancePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar を指定しないことで、まっさらなページにしている。
+      body: Container(
+        // Background color というオプションは無い。
+        decoration: BoxDecoration(
+          color: Colors.blue[100]
+        ),
+      ),
+    );
+  }
 }
 
 class DartLabPage extends StatelessWidget {
@@ -205,6 +223,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 // route を使わない場合、こんなの↓になる。
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => const DartLabPage()))
                 Navigator.pushNamed(context, '/dart-lab-page');
+              },
+            ),
+            ElevatedButton(
+              // Prefer const with constant constructors. っていう lint error? が出る。 const 無しのとき。
+              child: const Text('EntrancePage へ。'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/entrance-page');
               },
             ),
           ],
