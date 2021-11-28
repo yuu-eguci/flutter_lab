@@ -102,6 +102,17 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            // NOTE: どこに ElevatedButton を配置すればいいのかわからなかったので、 qiita を読んで
+            //       Row, Column, Center, Container を知って、この位置を見出したぜ。
+            ElevatedButton(
+              // Prefer const with constant constructors. っていう lint error? が出る。 const 無しのとき。
+              child: const Text('次へ'),
+              onPressed: () {
+                // TODO: 次へ進む処理を追加。
+                // ignore: avoid_print
+                print('次へ進む');
+              },
+            ),
           ],
         ),
       ),
