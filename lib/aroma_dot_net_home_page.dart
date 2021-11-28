@@ -110,7 +110,7 @@ class AromaDotNetHomePage extends StatelessWidget {
           } else if (index == 3) {
             // "お知らせ" は今回何もしない。
           } else if (index == 4) {
-            // "Account" は今回何もしない。
+            Navigator.popAndPushNamed(context, '/entrance-page');
           }
         },
       )
