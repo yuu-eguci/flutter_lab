@@ -153,6 +153,15 @@ class SignUpPage extends StatelessWidget {
                 ),
                 onPressed: () {},
               ),
+              OutlinedButton(
+                child: const Text('Sign up with Apple'),
+                style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: const StadiumBorder(),
+                  backgroundColor: Colors.black,
+                ),
+                onPressed: () {},
+              ),
             ],
           ),
 
