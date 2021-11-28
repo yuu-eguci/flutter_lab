@@ -24,7 +24,15 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'FlutterLab.HomePage'),
+      initialRoute: '/',
+      routes: {
+        // 初期画面の class を指定。
+        // The named parameter 'title' is required, but there's no corresponding argument. っていう lint error? が出る。
+        // title 無しだと。この title が何かわからん。
+        '/': (context) => const MyHomePage(title: 'FlutterLab.HomePage !'),
+        // DartLabPage ページの class を指定。
+        '/dart-lab-page': (context) => const DartLabPage(),
+      },
     );
   }
 }
@@ -138,10 +146,9 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 // ignore: avoid_print
                 print('"DartLabPage へ進む" が押された。');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DartLabPage())
-                );
+                // route を使わない場合、こんなの↓になる。
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => const DartLabPage()))
+                Navigator.pushNamed(context, '/dart-lab-page');
               },
             ),
           ],
