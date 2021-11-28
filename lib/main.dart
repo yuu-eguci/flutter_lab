@@ -60,6 +60,12 @@ class DartLabPage extends StatelessWidget {
   // これ↓が無いと。
   const DartLabPage({Key? key}) : super(key: key);
 
+  // DartLabPage では色んな処理をお試しするよ。これは各ボタンのデフォルト onPressed 関数。
+  void _doNothing() {
+    // ignore: avoid_print
+    print('doNothing!');
+  }
+
   @override
   Widget build(BuildContext context) {
     // Scaffold は "足場"。
@@ -82,10 +88,47 @@ class DartLabPage extends StatelessWidget {
                   },
                 ),
                 ElevatedButton(
-                  child: const Text('前のとこへ戻る'),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
+                ),
+                ElevatedButton(
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
+                ),
+                ElevatedButton(
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
+                ),
+                ElevatedButton(
+                  child: const Text('doNothing'),
+                  onPressed: _doNothing,
                 ),
               ],
             ),
