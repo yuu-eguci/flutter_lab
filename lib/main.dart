@@ -118,10 +118,22 @@ class SignUpPage extends StatelessWidget {
         color: Colors.white,
         child: Center(
           child: Column(
-            children: const <Widget>[
-              Text(
+            children: <Widget>[
+              const Text(
                 'Sign up',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              const Text(
+                'Registration is free.',
+              ),
+              OutlinedButton(
+                child: const Text('Sign up with e-mail'),
+                style: OutlinedButton.styleFrom(
+                  primary: Colors.black,
+                  shape: const StadiumBorder(),
+                  side: const BorderSide(color: Colors.black),
+                ),
+                onPressed: () {},
               ),
             ],
           ),
