@@ -33,7 +33,10 @@ class SignUpPage extends StatelessWidget {
                   shape: const StadiumBorder(),
                   side: const BorderSide(color: Colors.black),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  // FIXME: 本当は "くるん" って遷移したいんだけどサンプルが見つからない
+                  Navigator.pushNamed(context, '/aroma-dot-net-home-page');
+                },
               ),
               OutlinedButton(
                 child: const Text('Sign up with Facebook'),
@@ -42,7 +45,9 @@ class SignUpPage extends StatelessWidget {
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.blue,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/aroma-dot-net-home-page');
+                },
               ),
               OutlinedButton(
                 child: const Text('Sign up with LINE'),
@@ -51,7 +56,9 @@ class SignUpPage extends StatelessWidget {
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.green,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/aroma-dot-net-home-page');
+                },
               ),
               OutlinedButton(
                 child: const Text('Sign up with Apple'),
@@ -60,7 +67,9 @@ class SignUpPage extends StatelessWidget {
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/aroma-dot-net-home-page');
+                },
               ),
             ],
           ),
