@@ -78,6 +78,7 @@ class EntrancePage extends StatelessWidget {
             ),
             label: 'Sign in',
           ),
+          // FIXME: 背景が赤くなっていない。 backgroundColor: Colors.red によってこの item の背景色を赤くしているつもりなのだがなっていない。
           BottomNavigationBarItem(
             icon: Text(
               'New User',
