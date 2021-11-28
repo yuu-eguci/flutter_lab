@@ -118,6 +118,8 @@ class SignUpPage extends StatelessWidget {
         color: Colors.white,
         child: Center(
           child: Column(
+            // FIXME: margin とかのとり方がわからんので、とりあえず均一に並べてある。
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               const Text(
                 'Sign up',
