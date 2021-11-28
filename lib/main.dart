@@ -135,6 +135,16 @@ class SignUpPage extends StatelessWidget {
                 ),
                 onPressed: () {},
               ),
+              OutlinedButton(
+                child: const Text('Sign up with Facebook'),
+                style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: const StadiumBorder(),
+                  side: const BorderSide(color: Colors.blue),
+                  backgroundColor: Colors.blue,
+                ),
+                onPressed: () {},
+              ),
             ],
           ),
 
