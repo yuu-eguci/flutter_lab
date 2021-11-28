@@ -69,6 +69,24 @@ class EntrancePage extends StatelessWidget {
           color: Colors.blue[100]
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Text(
+              'Already a User',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            label: 'Sign in',
+          ),
+          BottomNavigationBarItem(
+            icon: Text(
+              'New User',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            label: 'Sign up',
+            backgroundColor: Colors.red,
+          ),
+      ],)
     );
   }
 }
