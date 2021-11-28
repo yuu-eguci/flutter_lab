@@ -48,6 +48,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class DartLabPage extends StatelessWidget {
+  // Use key in widget constructors.dartuse_key_in_widget_constructors っていう lint error? が出る。
+  // これ↓が無いと。
+  const DartLabPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Scaffold は "足場"。
@@ -122,11 +126,14 @@ class _MyHomePageState extends State<MyHomePage> {
             //       Row, Column, Center, Container を知って、この位置を見出したぜ。
             ElevatedButton(
               // Prefer const with constant constructors. っていう lint error? が出る。 const 無しのとき。
-              child: const Text('次へ'),
+              child: const Text('DartLabPage へ進む。'),
               onPressed: () {
-                // TODO: 次へ進む処理を追加。
                 // ignore: avoid_print
-                print('次へ進む');
+                print('"DartLabPage へ進む" が押された。');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DartLabPage())
+                );
               },
             ),
           ],
