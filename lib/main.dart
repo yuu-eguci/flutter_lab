@@ -61,7 +61,15 @@ class DartLabPage extends StatelessWidget {
       ),
       body: Container(
         height: double.infinity,
-        color: Colors.yellow[100]
+        color: Colors.yellow[100],
+        child: Center(
+          child: ElevatedButton(
+            child: const Text('前のとこへ戻る'),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
       ),
     );
   }
