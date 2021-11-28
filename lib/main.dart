@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         // DartLabPage ページの class を指定。
         '/dart-lab-page': (context) => const DartLabPage(),
         '/entrance-page': (context) => const EntrancePage(),
+        '/sign-up-page': (context) => const SignUpPage(),
       },
     );
   }
@@ -87,7 +88,35 @@ class EntrancePage extends StatelessWidget {
             label: 'Sign up',
             backgroundColor: Colors.red,
           ),
-      ],)
+      ],
+      onTap: (int index) {
+        // ここには items の index 番号が入ってくる。
+        if (index == 0) {
+          // "Already a User" は今回何もしない。
+        } else if (index == 1) {
+          Navigator.pushNamed(context, '/sign-up-page');
+        }
+      },
+      )
+    );
+  }
+}
+
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(''),
+        backgroundColor: Colors.white,
+        // これは影を消す設定。
+        elevation: 0.0,
+      ),
+      body: Container(
+        color: Colors.white,
+      ),
     );
   }
 }
