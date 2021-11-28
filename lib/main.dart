@@ -70,14 +70,27 @@ class DartLabPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         color: Colors.yellow[100],
-        child: Center(
-          child: ElevatedButton(
-            child: const Text('前のとこへ戻る'),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('前のとこへ戻る'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text('前のとこへ戻る'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
+          ],
+        )
       ),
     );
   }
