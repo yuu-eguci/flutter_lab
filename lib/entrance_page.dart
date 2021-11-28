@@ -31,15 +31,15 @@ class EntrancePage extends StatelessWidget {
             label: 'Sign up',
             backgroundColor: Colors.red,
           ),
-      ],
-      onTap: (int index) {
-        // ここには items の index 番号が入ってくる。
-        if (index == 0) {
-          // "Already a User" は今回何もしない。
-        } else if (index == 1) {
-          Navigator.pushNamed(context, '/sign-up-page');
-        }
-      },
+        ],
+        onTap: (int index) {
+          // ここには items の index 番号が入ってくる。
+          if (index == 0) {
+            // "Already a User" は今回何もしない。
+          } else if (index == 1) {
+            Navigator.pushNamed(context, '/sign-up-page');
+          }
+        },
       )
     );
   }
