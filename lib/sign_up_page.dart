@@ -34,6 +34,7 @@ class SignUpPage extends StatelessWidget {
                   side: const BorderSide(color: Colors.black),
                 ),
                 onPressed: () {
+                  // FIXME: 本当は "くるん" って遷移したいんだけどサンプルが見つからない
                   Navigator.pushNamed(context, '/aroma-dot-net-home-page');
                 },
               ),
