@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './entrance_page.dart' as entrance_page;
 import './sign_up_page.dart' as sign_up_page;
 import './dart_lab_page.dart' as dart_lab_page;
+import './aroma_dot_net_home_page.dart' as aroma_dot_net_home_page;
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/dart-lab-page': (context) => const dart_lab_page.DartLabPage(),
         '/entrance-page': (context) => const entrance_page.EntrancePage(),
         '/sign-up-page': (context) => const sign_up_page.SignUpPage(),
+        '/aroma-dot-net-home-page': (contet) => const aroma_dot_net_home_page.AromaDotNetHomePage(),
       },
     );
   }
