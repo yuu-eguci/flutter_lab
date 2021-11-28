@@ -30,7 +30,7 @@ class AromaDotNetHomePage extends StatelessWidget {
                   minimumSize: const Size(300, 60),
                 ),
                 onPressed: () {
-
+                  Navigator.pushNamed(context, '/factory-page');
                 },
               ),
               ElevatedButton.icon(
@@ -95,15 +95,22 @@ class AromaDotNetHomePage extends StatelessWidget {
             icon: Icon(Icons.account_balance),
             label: 'Account',
           ),
-      ],
-      onTap: (int index) {
-        // ここには items の index 番号が入ってくる。
-        if (index == 0) {
-          // "Already a User" は今回何もしない。
-        } else if (index == 1) {
-          Navigator.pushNamed(context, '/sign-up-page');
-        }
-      },
+        ],
+        currentIndex: 0,
+        onTap: (int index) {
+          // ここには items の index 番号が入ってくる。
+          if (index == 0) {
+            // "Home" は今回何もしない。
+          } else if (index == 1) {
+            Navigator.pushNamed(context, '/factory-page');
+          } else if (index == 2) {
+            // "Purchase" は今回何もしない。
+          } else if (index == 3) {
+            // "お知らせ" は今回何もしない。
+          } else if (index == 4) {
+            // "Account" は今回何もしない。
+          }
+        },
       )
     );
   }
