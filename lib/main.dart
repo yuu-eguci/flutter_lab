@@ -47,6 +47,22 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+class DartLabPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Scaffold は "足場"。
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('DartLabPage'),
+      ),
+      body: Container(
+        height: double.infinity,
+        color: Colors.yellow[100]
+      ),
+    );
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
