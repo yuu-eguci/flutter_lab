@@ -7,8 +7,6 @@ class FactoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // 戻るボタンを排除するパラメータ。
-        automaticallyImplyLeading: false,
         title: const Text('Your Factory'),
         backgroundColor: Colors.white,
       ),
@@ -77,7 +75,7 @@ class FactoryPage extends StatelessWidget {
         onTap: (int index) {
           // ここには items の index 番号が入ってくる。
           if (index == 0) {
-            Navigator.pushNamed(context, '/aroma-dot-net-home-page');
+            Navigator.pop(context);
           } else if (index == 1) {
             // ここが "Factory" です。
           } else if (index == 2) {
@@ -85,7 +83,7 @@ class FactoryPage extends StatelessWidget {
           } else if (index == 3) {
             // "お知らせ" は今回何もしない。
           } else if (index == 4) {
-            // "Account" は今回何もしない。
+            Navigator.popAndPushNamed(context, '/entrance-page');
           }
         },
       )
