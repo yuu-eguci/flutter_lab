@@ -16,7 +16,55 @@ class AromaDotNetHomePage extends StatelessWidget {
           child: Column(
             // FIXME: margin とかのとり方がわからんので、とりあえず均一に並べてある。
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children: <Widget>[
+              ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.filter_hdr,
+                  color: Colors.black,
+                ),
+                label: const Text(
+                  'Your Factory',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                ),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(300, 60),
+                ),
+                onPressed: () {
+
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.where_to_vote_rounded,
+                  color: Colors.black45,
+                ),
+                label: const Text(
+                  'Another content',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                ),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(300, 60),
+                  onPrimary: Colors.black45,
+                ),
+                onPressed: () {
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.where_to_vote_rounded,
+                  color: Colors.black45,
+                ),
+                label: const Text(
+                  'Another content',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                ),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(300, 60),
+                  onPrimary: Colors.black45,
+                ),
+                onPressed: () {
+                },
+              ),
             ],
           ),
 
