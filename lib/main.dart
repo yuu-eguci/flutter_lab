@@ -22,9 +22,17 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        // 初期画面の class を指定。
+        // The named parameter 'title' is required, but there's no corresponding argument. っていう lint error? が出る。
+        // title 無しだと。この title が何かわからん。
+        '/': (context) => const MyHomePage(title: 'FlutterLab.HomePage !'),
+        // DartLabPage ページの class を指定。
+        '/dart-lab-page': (context) => const DartLabPage(),
+      },
     );
   }
 }
@@ -45,6 +53,34 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class DartLabPage extends StatelessWidget {
+  // Use key in widget constructors.dartuse_key_in_widget_constructors っていう lint error? が出る。
+  // これ↓が無いと。
+  const DartLabPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Scaffold は "足場"。
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('DartLabPage'),
+      ),
+      body: Container(
+        height: double.infinity,
+        color: Colors.yellow[100],
+        child: Center(
+          child: ElevatedButton(
+            child: const Text('前のとこへ戻る'),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -101,6 +137,19 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            // NOTE: どこに ElevatedButton を配置すればいいのかわからなかったので、 qiita を読んで
+            //       Row, Column, Center, Container を知って、この位置を見出したぜ。
+            ElevatedButton(
+              // Prefer const with constant constructors. っていう lint error? が出る。 const 無しのとき。
+              child: const Text('DartLabPage へ進む。'),
+              onPressed: () {
+                // ignore: avoid_print
+                print('"DartLabPage へ進む" が押された。');
+                // route を使わない場合、こんなの↓になる。
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => const DartLabPage()))
+                Navigator.pushNamed(context, '/dart-lab-page');
+              },
             ),
           ],
         ),
