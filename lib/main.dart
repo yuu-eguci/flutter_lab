@@ -116,6 +116,17 @@ class SignUpPage extends StatelessWidget {
       ),
       body: Container(
         color: Colors.white,
+        child: Center(
+          child: Column(
+            children: const <Widget>[
+              Text(
+                'Sign up',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+            ],
+          ),
+
+        ),
       ),
     );
   }
