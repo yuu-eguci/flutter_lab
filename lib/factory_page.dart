@@ -19,10 +19,7 @@ class FactoryPage extends StatelessWidget {
             // FIXME: margin とかのとり方がわからんので、とりあえず均一に並べてある。
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              const Text(
-                'ここに画像を置く',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-              ),
+              Image.asset('images/sample.png'),
               const Text(
                 'あなただけの香りを\n製造しましょう',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
