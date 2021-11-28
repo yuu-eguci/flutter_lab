@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './entrance_page.dart' as entrance_page;
+import './sign_up_page.dart' as sign_up_page;
+import './dart_lab_page.dart' as dart_lab_page;
 
 void main() {
   runApp(const MyApp());
@@ -31,9 +34,9 @@ class MyApp extends StatelessWidget {
         // title 無しだと。この title が何かわからん。
         '/': (context) => const MyHomePage(title: 'FlutterLab.HomePage !'),
         // DartLabPage ページの class を指定。
-        '/dart-lab-page': (context) => const DartLabPage(),
-        '/entrance-page': (context) => const EntrancePage(),
-        '/sign-up-page': (context) => const SignUpPage(),
+        '/dart-lab-page': (context) => const dart_lab_page.DartLabPage(),
+        '/entrance-page': (context) => const entrance_page.EntrancePage(),
+        '/sign-up-page': (context) => const sign_up_page.SignUpPage(),
       },
     );
   }
@@ -55,206 +58,6 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class EntrancePage extends StatelessWidget {
-  const EntrancePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar を指定しないことで、まっさらなページにしている。
-      body: Container(
-        // Background color というオプションは無い。
-        decoration: BoxDecoration(
-          color: Colors.blue[100]
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Text(
-              'Already a User',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            label: 'Sign in',
-          ),
-          // FIXME: 背景が赤くなっていない。 backgroundColor: Colors.red によってこの item の背景色を赤くしているつもりなのだがなっていない。
-          BottomNavigationBarItem(
-            icon: Text(
-              'New User',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            label: 'Sign up',
-            backgroundColor: Colors.red,
-          ),
-      ],
-      onTap: (int index) {
-        // ここには items の index 番号が入ってくる。
-        if (index == 0) {
-          // "Already a User" は今回何もしない。
-        } else if (index == 1) {
-          Navigator.pushNamed(context, '/sign-up-page');
-        }
-      },
-      )
-    );
-  }
-}
-
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(''),
-        backgroundColor: Colors.white,
-        // これは影を消す設定。
-        elevation: 0.0,
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            // FIXME: margin とかのとり方がわからんので、とりあえず均一に並べてある。
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              const Text(
-                'Sign up',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-              ),
-              const Text(
-                'Registration is free.',
-              ),
-              OutlinedButton(
-                child: const Text('Sign up with e-mail'),
-                style: OutlinedButton.styleFrom(
-                  primary: Colors.black,
-                  shape: const StadiumBorder(),
-                  side: const BorderSide(color: Colors.black),
-                ),
-                onPressed: () {},
-              ),
-              OutlinedButton(
-                child: const Text('Sign up with Facebook'),
-                style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
-                  shape: const StadiumBorder(),
-                  backgroundColor: Colors.blue,
-                ),
-                onPressed: () {},
-              ),
-              OutlinedButton(
-                child: const Text('Sign up with LINE'),
-                style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
-                  shape: const StadiumBorder(),
-                  backgroundColor: Colors.green,
-                ),
-                onPressed: () {},
-              ),
-              OutlinedButton(
-                child: const Text('Sign up with Apple'),
-                style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
-                  shape: const StadiumBorder(),
-                  backgroundColor: Colors.black,
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-
-        ),
-      ),
-    );
-  }
-}
-
-class DartLabPage extends StatelessWidget {
-  // Use key in widget constructors.dartuse_key_in_widget_constructors っていう lint error? が出る。
-  // これ↓が無いと。
-  const DartLabPage({Key? key}) : super(key: key);
-
-  // DartLabPage では色んな処理をお試しするよ。これは各ボタンのデフォルト onPressed 関数。
-  void _doNothing() {
-    // ignore: avoid_print
-    print('doNothing!');
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // Scaffold は "足場"。
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('DartLabPage'),
-      ),
-      body: Container(
-        height: double.infinity,
-        color: Colors.yellow[100],
-        child: Column(
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  child: const Text('前のとこへ戻る'),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-              ],
-            ),
-          ],
-        )
-      ),
-    );
-  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
