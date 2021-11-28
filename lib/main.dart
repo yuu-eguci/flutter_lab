@@ -140,8 +140,16 @@ class SignUpPage extends StatelessWidget {
                 style: OutlinedButton.styleFrom(
                   primary: Colors.white,
                   shape: const StadiumBorder(),
-                  side: const BorderSide(color: Colors.blue),
                   backgroundColor: Colors.blue,
+                ),
+                onPressed: () {},
+              ),
+              OutlinedButton(
+                child: const Text('Sign up with LINE'),
+                style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: const StadiumBorder(),
+                  backgroundColor: Colors.green,
                 ),
                 onPressed: () {},
               ),
