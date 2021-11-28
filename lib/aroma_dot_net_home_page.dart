@@ -7,6 +7,8 @@ class AromaDotNetHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // 戻るボタンを排除するパラメータ。
+        automaticallyImplyLeading: false,
         title: const Text('aroma.net'),
         backgroundColor: Colors.white,
       ),
