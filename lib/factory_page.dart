@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FactoryPage extends StatelessWidget {
-  const FactoryPage({Key? key}) : super(key: key);
+  const FactoryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,8 @@ class FactoryPage extends StatelessWidget {
             // FIXME: margin とかのとり方がわからんので、とりあえず均一に並べてある。
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Image.asset('images/sample.png'),
+              // 横向きなどで高さが足りない場合は、画像を縮めて overflow を防ぎます。
+              Flexible(child: Image.asset('images/sample.png')),
               const Text(
                 'あなただけの香りを\n製造しましょう',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
@@ -32,7 +33,7 @@ class FactoryPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
                 style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
+                  foregroundColor: Colors.white,
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.black,
                   minimumSize: const Size(200, 60),
@@ -83,7 +84,8 @@ class FactoryPage extends StatelessWidget {
           } else if (index == 3) {
             // "お知らせ" は今回何もしない。
           } else if (index == 4) {
-            Navigator.popAndPushNamed(context, '/entrance-page');
+            // ログアウト時は、戻る操作で aroma.net に戻れないよう、Home (/) の上に EntrancePage だけ残します。
+            Navigator.pushNamedAndRemoveUntil(context, '/entrance-page', ModalRoute.withName('/'));
           }
         },
       )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,8 @@ class SignUpPage extends StatelessWidget {
                 'Registration is free.',
               ),
               OutlinedButton(
-                child: const Text('Sign up with e-mail'),
                 style: OutlinedButton.styleFrom(
-                  primary: Colors.black,
+                  foregroundColor: Colors.black,
                   shape: const StadiumBorder(),
                   side: const BorderSide(color: Colors.black),
                 ),
@@ -37,39 +36,40 @@ class SignUpPage extends StatelessWidget {
                   // FIXME: 本当は "くるん" って遷移したいんだけどサンプルが見つからない
                   Navigator.pushNamed(context, '/aroma-dot-net-home-page');
                 },
+                child: const Text('Sign up with e-mail'),
               ),
               OutlinedButton(
-                child: const Text('Sign up with Facebook'),
                 style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
+                  foregroundColor: Colors.white,
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.blue,
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/aroma-dot-net-home-page');
                 },
+                child: const Text('Sign up with Facebook'),
               ),
               OutlinedButton(
-                child: const Text('Sign up with LINE'),
                 style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
+                  foregroundColor: Colors.white,
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.green,
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/aroma-dot-net-home-page');
                 },
+                child: const Text('Sign up with LINE'),
               ),
               OutlinedButton(
-                child: const Text('Sign up with Apple'),
                 style: OutlinedButton.styleFrom(
-                  primary: Colors.white,
+                  foregroundColor: Colors.white,
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.black,
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/aroma-dot-net-home-page');
                 },
+                child: const Text('Sign up with Apple'),
               ),
             ],
           ),

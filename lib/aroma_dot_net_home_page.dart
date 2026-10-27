@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AromaDotNetHomePage extends StatelessWidget {
-  const AromaDotNetHomePage({Key? key}) : super(key: key);
+  const AromaDotNetHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class AromaDotNetHomePage extends StatelessWidget {
                 ),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(300, 60),
-                  onPrimary: Colors.black45,
+                  foregroundColor: Colors.black45,
                 ),
                 onPressed: () {
                 },
@@ -62,7 +62,7 @@ class AromaDotNetHomePage extends StatelessWidget {
                 ),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(300, 60),
-                  onPrimary: Colors.black45,
+                  foregroundColor: Colors.black45,
                 ),
                 onPressed: () {
                 },
@@ -110,7 +110,8 @@ class AromaDotNetHomePage extends StatelessWidget {
           } else if (index == 3) {
             // "お知らせ" は今回何もしない。
           } else if (index == 4) {
-            Navigator.popAndPushNamed(context, '/entrance-page');
+            // ログアウト時は、戻る操作で aroma.net に戻れないよう、Home (/) の上に EntrancePage だけ残します。
+            Navigator.pushNamedAndRemoveUntil(context, '/entrance-page', ModalRoute.withName('/'));
           }
         },
       )
