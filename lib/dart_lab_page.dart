@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DartLabPage extends StatelessWidget {
   // Use key in widget constructors.dartuse_key_in_widget_constructors っていう lint error? が出る。
   // これ↓が無いと。
-  const DartLabPage({Key? key}) : super(key: key);
+  const DartLabPage({super.key});
 
   // DartLabPage では色んな処理をお試しするよ。これは各ボタンのデフォルト onPressed 関数。
   void _doNothing() {
@@ -33,8 +33,8 @@ class DartLabPage extends StatelessWidget {
                   },
                 ),
                 ElevatedButton(
-                  child: const Text('doNothing'),
                   onPressed: _doNothing,
+                  child: const Text('doNothing'),
                 ),
               ],
             ),
@@ -42,25 +42,12 @@ class DartLabPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 ElevatedButton(
-                  child: const Text('doNothing'),
                   onPressed: _doNothing,
+                  child: const Text('doNothing'),
                 ),
                 ElevatedButton(
-                  child: const Text('doNothing'),
                   onPressed: _doNothing,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
                   child: const Text('doNothing'),
-                  onPressed: _doNothing,
-                ),
-                ElevatedButton(
-                  child: const Text('doNothing'),
-                  onPressed: _doNothing,
                 ),
               ],
             ),
@@ -68,12 +55,25 @@ class DartLabPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 ElevatedButton(
-                  child: const Text('doNothing'),
                   onPressed: _doNothing,
+                  child: const Text('doNothing'),
                 ),
                 ElevatedButton(
-                  child: const Text('doNothing'),
                   onPressed: _doNothing,
+                  child: const Text('doNothing'),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: _doNothing,
+                  child: const Text('doNothing'),
+                ),
+                ElevatedButton(
+                  onPressed: _doNothing,
+                  child: const Text('doNothing'),
                 ),
               ],
             ),
